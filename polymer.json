@@ -4,6 +4,8 @@
   "fragments": [
     "web-components/bsi.js",
     "web-components/d2l-activity-alignments.js",
+    "web-components/d2l-activity-collections.js",
+    "web-components/d2l-activity-editor.js",
     "web-components/d2l-enrollment-collection-widget.js",
     "web-components/d2l-enrollment-summary-view.js",
     "web-components/d2l-image-banner-overlay.js",
@@ -19,9 +21,19 @@
     "web-components/d2l-outcomes-level-of-achievements.js",
     "web-components/d2l-outcomes-user-progress.js",
     "web-components/d2l-program-outcomes-picker.js",
-    "web-components/d2l-tabs.js"
+    "web-components/d2l-tabs.js",
+    "web-components/d2l-activity-exemptions.js",
+    "web-components/d2l-quick-eval.js",
+    "web-components/d2l-content-store.js"
   ],
   "extraDependencies": [
+    "node_modules/@d2l/d2l-attachment/locales/*.json",
+    "node_modules/@d2l/d2l-attachment/icons/*.svg",
+    "node_modules/d2l-activities/components/d2l-activity-collection-editor/lang/*.js",
+    "node_modules/d2l-activities/components/d2l-activity-editor/**/lang/*.js",
+    "node_modules/d2l-enrollments/components/d2l-enrollment-collection-view/lang/*.js",
+    "node_modules/d2l-organizations/components/d2l-organization-admin-list/lang/*.js",
+    "node_modules/d2l-organizations/components/d2l-organization-availability-set/lang/*.js",
     "node_modules/d2l-rubric/editor/images/**",
     "node_modules/d2l-html-editor/skin-4.3.7/**",
     "node_modules/d2l-html-editor/langs/**",

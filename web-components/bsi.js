@@ -2,8 +2,14 @@ import 'whatwg-fetch'; // Required for d2l-fetch + IE11
 
 import 'fastdom';
 
-import d2lIntl from 'd2l-intl';
-window.d2lIntl = d2lIntl;
+import {formatNumber, parseNumber} from '@brightspace-ui/intl/lib/number.js';
+import {formatTime, parseTime} from '@brightspace-ui/intl/lib/dateTime.js';
+window.D2L.Intl = {
+	FormatNumber: formatNumber,
+	FormatTime: formatTime,
+	ParseNumber: parseNumber,
+	ParseTime: parseTime
+};
 
 import { d2lfetch } from '../node_modules/d2l-fetch/src/index.js';
 import { fetchAuth } from 'd2l-fetch-auth';
@@ -37,12 +43,15 @@ window.D2L.Telemetry = {
 	}
 };
 
+import '@brightspace-ui/core/components/backdrop/backdrop.js';
 import '@brightspace-ui/core/components/button/button-icon.js';
 import '@brightspace-ui/core/components/button/button-subtle.js';
 import '@brightspace-ui/core/components/button/floating-buttons.js';
 import '@brightspace-ui/core/components/icons/icon.js';
+import '@brightspace-ui/core/components/inputs/input-search.js';
+import '@brightspace-ui/core/components/link/link.js';
+import '@brightspace-ui/core/components/loading-spinner/loading-spinner.js';
 import '@brightspace-ui/core/components/more-less/more-less.js';
-import 'd2l-activities/components/d2l-quick-eval/d2l-quick-eval.js';
 import 'd2l-activities/components/d2l-subtitle/d2l-subtitle.js';
 import '@d2l/switch/d2l-switch.js';
 import 'd2l-alert/d2l-alert-toast.js';
@@ -56,9 +65,6 @@ import 'd2l-dropdown/d2l-dropdown-context-menu.js';
 import 'd2l-dropdown/d2l-dropdown-menu.js';
 import 'd2l-dropdown/d2l-dropdown-more.js';
 import 'd2l-dropdown/d2l-dropdown.js';
-import 'd2l-inputs/d2l-input-search.js';
-import 'd2l-link/d2l-link.js';
-import 'd2l-loading-spinner/d2l-loading-spinner.js';
 import 'd2l-menu/d2l-menu-item-link.js';
 import 'd2l-menu/d2l-menu.js';
 import 'd2l-navigation/d2l-navigation-band.js';
@@ -80,6 +86,7 @@ import 'd2l-polymer-behaviors/d2l-dom-expand-collapse.js';
 import 'd2l-polymer-behaviors/d2l-gestures-swipe.js';
 import 'd2l-save-status/d2l-save-status.js';
 import 'd2l-simple-overlay/d2l-simple-overlay.js';
+import 'd2l-tooltip/d2l-tooltip.js';
 import 'd2l-users/components/d2l-profile-image.js';
 
 /*
@@ -89,6 +96,9 @@ import 'd2l-users/components/d2l-profile-image.js';
  */
 import { setCancelSyntheticClickEvents  } from '@polymer/polymer/lib/utils/settings.js';
 setCancelSyntheticClickEvents(false);
+
+import {announce} from '../node_modules/@brightspace-ui/core/helpers/announce.js';
+window.D2L.Announce = announce;
 
 import {clearDismissible, setDismissible} from '../node_modules/@brightspace-ui/core/helpers/dismissible.js';
 window.D2L.Dismissible = {
